@@ -7,17 +7,18 @@
 //
 
 import UIKit
+
 // 設定畫面
 class TableViewSectionset: UITableViewController {
     
-    @IBOutlet var sectionTableView: UITableView!
-    
-    var sectionRow = ["油價", "垃圾車", "疾病"] // NSMutableArray String -> Anyobject
+    var sectionRow = ["節慶", "油價", "垃圾車", "疾病"] // NSMutableArray String -> Anyobject
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.isEditing = true // 調成可編輯狀態
-        
+        tableView.backgroundView?.alpha = 0.5
+        tableView.backgroundView = UIImageView(image: UIImage(named: "backgroud"))
+       
     }
 
     // MARK: - Table view data source
@@ -38,16 +39,6 @@ class TableViewSectionset: UITableViewController {
         return cell
     }
   
-    //  產出header
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let header = "加入小工具"
-        return header
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 80
-    }
-    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         
         return true

@@ -23,6 +23,12 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroud")!)
+        self.view.backgroundColor?.withAlphaComponent(0.5)
+        // 註冊tableViewCell
+        mainTableView.register(UINib(nibName: "BasicTableViewCell", bundle: nil), forCellReuseIdentifier: "BasicCell")
+        mainTableView.register(UINib(nibName: "WeatherTableViewCell", bundle: nil), forCellReuseIdentifier: "WeatherCell")
+        mainTableView.register(UINib(nibName: "HeaderSection", bundle: nil), forCellReuseIdentifier: "HeaderCell")
         
         locationManager.delegate = self //設定服務代理
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 設定最佳精確度
@@ -36,58 +42,93 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
             print("失敗")
         }
         
-       mainTableView.register(UINib(nibName: "OilPriceTableViewCell", bundle: nil), forCellReuseIdentifier: "OilPriceCell")
-       mainTableView.register(UINib(nibName: "TruthcarTableViewCell", bundle: nil), forCellReuseIdentifier: "TruthcarCell")
-        mainTableView.delegate = self
-        mainTableView.dataSource = self
-        mainTableView.reloadData()
     }
     
     // TableView
-    var tableViewSection = ["節慶","油價", "垃圾車", "疾病"]
-    var tableViewRow = [["端午節"],
+    var tableViewSection = [" ", "節慶", "油價", "垃圾車", "疾病"]
+    
+    var tableViewRow = [[" "], ["即將到來"],
                        ["92無鉛", "95無鉛", "98無鉛", "柴油"],
                        ["時間"],
-                       ["登革熱"]]
+                       ["登革熱"],
+                        ]
+    
+    var holiday = "端午節"
     var priceArray = ["20", "30", "40", "50"]
-
-    // 要有幾個section
+    var trashTime = "18:00"
+    var disese = "中等"
+    // 1.要有幾個section
     func numberOfSections(in tableView: UITableView) -> Int {
         return tableViewSection.count
     }
-    
-    // 每個section有幾列
+    // 2.每個section有幾列
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableViewRow[section].count
     }
-    
-    // 產出cell
+    // 3.產出cell的內容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tableViewSection[indexPath.section] == "油價"{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "OilPriceCell", for: indexPath)as! OilPriceTableViewCell
-            cell.textLabel?.text = tableViewRow[indexPath.section][indexPath.row]
-            cell.priceLabel.text = priceArray[indexPath.row]
-            // cell.PriceLabel.bounds = CGRect(x: 300, y: 10, width: 40, height: 30)
-            print(cell.priceLabel.bounds)
+
+        switch tableViewSection[indexPath.section] {
+        case " ":
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath)as! WeatherTableViewCell
+            cell.aqivalueLabel.text? = "100"
+            cell.uvivalueLabel.text? = "50"
+            cell.selectionStyle = .none
             return cell
-        }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TruthcarCell", for: indexPath)as! TruthcarTableViewCell
-            cell.textLabel?.text = tableViewRow[indexPath.section][indexPath.row]
+        case "節慶":
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath)as! BasicTableViewCell
+            cell.titleLabel.text? = tableViewRow[indexPath.section][indexPath.row]
+            cell.valueLabel.text? = holiday
+            cell.selectionStyle = .none
+            return cell
+        case "油價":
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath)as! BasicTableViewCell
+            cell.titleLabel.text? = tableViewRow[indexPath.section][indexPath.row]
+            cell.valueLabel.text? = priceArray[indexPath.row]
+            cell.selectionStyle = .none
+            return cell
+        case "垃圾車":
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath)as! BasicTableViewCell
+            cell.titleLabel.text? = tableViewRow[indexPath.section][indexPath.row]
+            cell.valueLabel.text? = trashTime
+            cell.selectionStyle = .none
+            return cell
+        case "疾病":
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath)as! BasicTableViewCell
+            cell.titleLabel.text? = tableViewRow[indexPath.section][indexPath.row]
+            cell.valueLabel.text? = disese
+            cell.selectionStyle = .none
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+            cell.selectionStyle = .none
             return cell
         }
-        
     }
-    
-    // 設定header
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-       return tableViewSection[section]
-    }
-    
-    //設定header的字型
+    // 5.設定header的高
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60
+        if section == 0{ // 天氣的header隱藏
+            return 0
+        }else{
+            return 55
+        }
+    }
+    //6. 設定header的被View
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let title = tableView.dequeueReusableCell(withIdentifier: "HeaderCell")as! HeaderSection
+        title.headerLabel.text? = tableViewSection[section]
+        return title
     }
     
+    
+    // Row的高
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if tableViewSection[indexPath.section] == " "{
+            return 165 // 天氣的Row
+        }else{
+            return 50 // 其他的Row
+        }
+    }
     // 處理最近的位置更新
     func locationManager(_ manger: CLLocationManager, didUpdateLocations location:[CLLocation]){
         locationManager.delegate = self

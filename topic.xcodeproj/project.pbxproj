@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1752E822925815006A4431 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1752E622925815006A4431 /* BasicTableViewCell.swift */; };
+		0D1752E922925815006A4431 /* BasicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1752E722925815006A4431 /* BasicTableViewCell.xib */; };
+		0D1752EC22926A1E006A4431 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1752EA22926A1E006A4431 /* WeatherTableViewCell.swift */; };
+		0D1752ED22926A1E006A4431 /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1752EB22926A1E006A4431 /* WeatherTableViewCell.xib */; };
 		0D85EBA0228F123A0011033D /* FirstView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D85EB9F228F123A0011033D /* FirstView.storyboard */; };
 		0D85EBA2228F13DF0011033D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D85EBA1228F13DF0011033D /* FirstViewController.swift */; };
-		0D87BE0E228C7C0900E43D82 /* TruthcarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87BE0C228C7C0900E43D82 /* TruthcarTableViewCell.swift */; };
-		0D87BE0F228C7C0900E43D82 /* TruthcarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D87BE0D228C7C0900E43D82 /* TruthcarTableViewCell.xib */; };
+		0DB7BA742294515A00EA24C8 /* HeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7BA722294515A00EA24C8 /* HeaderSection.swift */; };
+		0DB7BA752294515A00EA24C8 /* HeaderSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB7BA732294515A00EA24C8 /* HeaderSection.xib */; };
 		0DCD295E228F2DD600820543 /* firstview.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DCD295D228F2DD600820543 /* firstview.json */; };
 		0DD6DA4E228968FF00D6E755 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6DA4D228968FF00D6E755 /* AppDelegate.swift */; };
 		0DD6DA50228968FF00D6E755 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6DA4F228968FF00D6E755 /* ViewController.swift */; };
@@ -19,8 +23,6 @@
 		0DD6DA582289690000D6E755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD6DA562289690000D6E755 /* LaunchScreen.storyboard */; };
 		0DD6DA632289690000D6E755 /* topicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6DA622289690000D6E755 /* topicTests.swift */; };
 		0DD6DA6E2289690000D6E755 /* topicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6DA6D2289690000D6E755 /* topicUITests.swift */; };
-		0DD6DA7D2289A29C00D6E755 /* OilPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6DA7B2289A29C00D6E755 /* OilPriceTableViewCell.swift */; };
-		0DD6DA7E2289A29C00D6E755 /* OilPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD6DA7C2289A29C00D6E755 /* OilPriceTableViewCell.xib */; };
 		0DD6DA88228C0CE400D6E755 /* TableViewSectionset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6DA87228C0CE300D6E755 /* TableViewSectionset.swift */; };
 		6CA743267DD43DFBB1704C41 /* Pods_topicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5495A0C12EE28229555DDFD /* Pods_topicUITests.framework */; };
 		AAC97251FC33BE79A65380B0 /* Pods_topic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D69A40B99B37398802B0C9 /* Pods_topic.framework */; };
@@ -45,10 +47,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D1752E622925815006A4431 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
+		0D1752E722925815006A4431 /* BasicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicTableViewCell.xib; sourceTree = "<group>"; };
+		0D1752EA22926A1E006A4431 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		0D1752EB22926A1E006A4431 /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
 		0D85EB9F228F123A0011033D /* FirstView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstView.storyboard; sourceTree = "<group>"; };
 		0D85EBA1228F13DF0011033D /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		0D87BE0C228C7C0900E43D82 /* TruthcarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruthcarTableViewCell.swift; sourceTree = "<group>"; };
-		0D87BE0D228C7C0900E43D82 /* TruthcarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TruthcarTableViewCell.xib; sourceTree = "<group>"; };
+		0DB7BA722294515A00EA24C8 /* HeaderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSection.swift; sourceTree = "<group>"; };
+		0DB7BA732294515A00EA24C8 /* HeaderSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderSection.xib; sourceTree = "<group>"; };
 		0DCD295D228F2DD600820543 /* firstview.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = firstview.json; sourceTree = SOURCE_ROOT; };
 		0DD6DA4A228968FF00D6E755 /* topic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = topic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD6DA4D228968FF00D6E755 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,8 +69,6 @@
 		0DD6DA692289690000D6E755 /* topicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = topicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD6DA6D2289690000D6E755 /* topicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topicUITests.swift; sourceTree = "<group>"; };
 		0DD6DA6F2289690000D6E755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DD6DA7B2289A29C00D6E755 /* OilPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OilPriceTableViewCell.swift; sourceTree = "<group>"; };
-		0DD6DA7C2289A29C00D6E755 /* OilPriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OilPriceTableViewCell.xib; sourceTree = "<group>"; };
 		0DD6DA87228C0CE300D6E755 /* TableViewSectionset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionset.swift; sourceTree = "<group>"; };
 		25D69A40B99B37398802B0C9 /* Pods_topic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_topic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50009A09596BE7E381FE7247 /* Pods-topicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-topicTests.release.xcconfig"; path = "Target Support Files/Pods-topicTests/Pods-topicTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,17 +144,19 @@
 		0DD6DA4C228968FF00D6E755 /* topic */ = {
 			isa = PBXGroup;
 			children = (
+				0D1752EA22926A1E006A4431 /* WeatherTableViewCell.swift */,
+				0D1752EB22926A1E006A4431 /* WeatherTableViewCell.xib */,
 				0DD6DA4D228968FF00D6E755 /* AppDelegate.swift */,
 				0DD6DA4F228968FF00D6E755 /* ViewController.swift */,
+				0D1752E622925815006A4431 /* BasicTableViewCell.swift */,
+				0D1752E722925815006A4431 /* BasicTableViewCell.xib */,
 				0DD6DA87228C0CE300D6E755 /* TableViewSectionset.swift */,
+				0DB7BA722294515A00EA24C8 /* HeaderSection.swift */,
+				0DB7BA732294515A00EA24C8 /* HeaderSection.xib */,
 				0DD6DA51228968FF00D6E755 /* Main.storyboard */,
 				0D85EB9F228F123A0011033D /* FirstView.storyboard */,
 				0D85EBA1228F13DF0011033D /* FirstViewController.swift */,
 				0DCD295D228F2DD600820543 /* firstview.json */,
-				0DD6DA7B2289A29C00D6E755 /* OilPriceTableViewCell.swift */,
-				0DD6DA7C2289A29C00D6E755 /* OilPriceTableViewCell.xib */,
-				0D87BE0C228C7C0900E43D82 /* TruthcarTableViewCell.swift */,
-				0D87BE0D228C7C0900E43D82 /* TruthcarTableViewCell.xib */,
 				0DD6DA542289690000D6E755 /* Assets.xcassets */,
 				0DD6DA562289690000D6E755 /* LaunchScreen.storyboard */,
 				0DD6DA592289690000D6E755 /* Info.plist */,
@@ -297,13 +303,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DD6DA7E2289A29C00D6E755 /* OilPriceTableViewCell.xib in Resources */,
-				0D87BE0F228C7C0900E43D82 /* TruthcarTableViewCell.xib in Resources */,
+				0DB7BA752294515A00EA24C8 /* HeaderSection.xib in Resources */,
 				0DD6DA582289690000D6E755 /* LaunchScreen.storyboard in Resources */,
+				0D1752E922925815006A4431 /* BasicTableViewCell.xib in Resources */,
 				0DD6DA552289690000D6E755 /* Assets.xcassets in Resources */,
 				0DCD295E228F2DD600820543 /* firstview.json in Resources */,
 				0D85EBA0228F123A0011033D /* FirstView.storyboard in Resources */,
 				0DD6DA53228968FF00D6E755 /* Main.storyboard in Resources */,
+				0D1752ED22926A1E006A4431 /* WeatherTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,12 +426,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D87BE0E228C7C0900E43D82 /* TruthcarTableViewCell.swift in Sources */,
+				0D1752EC22926A1E006A4431 /* WeatherTableViewCell.swift in Sources */,
 				0DD6DA88228C0CE400D6E755 /* TableViewSectionset.swift in Sources */,
+				0D1752E822925815006A4431 /* BasicTableViewCell.swift in Sources */,
 				0DD6DA50228968FF00D6E755 /* ViewController.swift in Sources */,
+				0DB7BA742294515A00EA24C8 /* HeaderSection.swift in Sources */,
 				0D85EBA2228F13DF0011033D /* FirstViewController.swift in Sources */,
 				0DD6DA4E228968FF00D6E755 /* AppDelegate.swift in Sources */,
-				0DD6DA7D2289A29C00D6E755 /* OilPriceTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,15 +1,18 @@
 //
-//  TruthcarTableViewCell.swift
+//  GasPriceCell.swift
 //  topic
 //
-//  Created by 許維倫 on 2019/5/16.
+//  Created by 許維倫 on 2019/5/20.
 //  Copyright © 2019 許維倫. All rights reserved.
 //
 
 import UIKit
 
-class TruthcarTableViewCell: UITableViewCell {
+class BasicTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
