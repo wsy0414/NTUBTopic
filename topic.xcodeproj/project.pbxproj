@@ -144,13 +144,13 @@
 		0DD6DA4C228968FF00D6E755 /* topic */ = {
 			isa = PBXGroup;
 			children = (
-				0D1752EA22926A1E006A4431 /* WeatherTableViewCell.swift */,
-				0D1752EB22926A1E006A4431 /* WeatherTableViewCell.xib */,
 				0DD6DA4D228968FF00D6E755 /* AppDelegate.swift */,
 				0DD6DA4F228968FF00D6E755 /* ViewController.swift */,
+				0DD6DA87228C0CE300D6E755 /* TableViewSectionset.swift */,
+				0D1752EA22926A1E006A4431 /* WeatherTableViewCell.swift */,
+				0D1752EB22926A1E006A4431 /* WeatherTableViewCell.xib */,
 				0D1752E622925815006A4431 /* BasicTableViewCell.swift */,
 				0D1752E722925815006A4431 /* BasicTableViewCell.xib */,
-				0DD6DA87228C0CE300D6E755 /* TableViewSectionset.swift */,
 				0DB7BA722294515A00EA24C8 /* HeaderSection.swift */,
 				0DB7BA732294515A00EA24C8 /* HeaderSection.xib */,
 				0DD6DA51228968FF00D6E755 /* Main.storyboard */,

@@ -23,8 +23,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroud")!)
-        self.view.backgroundColor?.withAlphaComponent(0.5)
+        
         // 註冊tableViewCell
         mainTableView.register(UINib(nibName: "BasicTableViewCell", bundle: nil), forCellReuseIdentifier: "BasicCell")
         mainTableView.register(UINib(nibName: "WeatherTableViewCell", bundle: nil), forCellReuseIdentifier: "WeatherCell")
@@ -44,8 +43,10 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
     }
     
+   
+    
     // TableView
-    var tableViewSection = [" ", "節慶", "油價", "垃圾車", "疾病"]
+    var tableViewSection = ["天氣", "節慶", "油價", "垃圾車", "疾病"]
     
     var tableViewRow = [[" "], ["即將到來"],
                        ["92無鉛", "95無鉛", "98無鉛", "柴油"],
@@ -69,7 +70,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         switch tableViewSection[indexPath.section] {
-        case " ":
+        case "天氣":
             let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath)as! WeatherTableViewCell
             cell.aqivalueLabel.text? = "100"
             cell.uvivalueLabel.text? = "50"
@@ -123,7 +124,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     
     // Row的高
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if tableViewSection[indexPath.section] == " "{
+        if tableViewSection[indexPath.section] == "天氣"{
             return 165 // 天氣的Row
         }else{
             return 50 // 其他的Row
@@ -159,7 +160,13 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
                 }
         })
     }
+    // 頁面傳值
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destViewController: TableViewSectionset = segue.destination as! TableViewSectionset
+        destViewController.sectionRow = tableViewSection
+    }
     
+   
 }
 
 
