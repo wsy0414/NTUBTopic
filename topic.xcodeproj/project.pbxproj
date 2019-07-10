@@ -11,6 +11,8 @@
 		0D1752E922925815006A4431 /* BasicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1752E722925815006A4431 /* BasicTableViewCell.xib */; };
 		0D1752EC22926A1E006A4431 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1752EA22926A1E006A4431 /* WeatherTableViewCell.swift */; };
 		0D1752ED22926A1E006A4431 /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1752EB22926A1E006A4431 /* WeatherTableViewCell.xib */; };
+		0D56178822D6168900EABB00 /* PriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D56178622D6168900EABB00 /* PriceTableViewCell.swift */; };
+		0D56178922D6168900EABB00 /* PriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D56178722D6168900EABB00 /* PriceTableViewCell.xib */; };
 		0D85EBA0228F123A0011033D /* FirstView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D85EB9F228F123A0011033D /* FirstView.storyboard */; };
 		0D85EBA2228F13DF0011033D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D85EBA1228F13DF0011033D /* FirstViewController.swift */; };
 		0DB7BA742294515A00EA24C8 /* HeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7BA722294515A00EA24C8 /* HeaderSection.swift */; };
@@ -51,6 +53,8 @@
 		0D1752E722925815006A4431 /* BasicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicTableViewCell.xib; sourceTree = "<group>"; };
 		0D1752EA22926A1E006A4431 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		0D1752EB22926A1E006A4431 /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
+		0D56178622D6168900EABB00 /* PriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTableViewCell.swift; sourceTree = "<group>"; };
+		0D56178722D6168900EABB00 /* PriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceTableViewCell.xib; sourceTree = "<group>"; };
 		0D85EB9F228F123A0011033D /* FirstView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstView.storyboard; sourceTree = "<group>"; };
 		0D85EBA1228F13DF0011033D /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		0DB7BA722294515A00EA24C8 /* HeaderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSection.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 			children = (
 				0DD6DA4D228968FF00D6E755 /* AppDelegate.swift */,
 				0DD6DA4F228968FF00D6E755 /* ViewController.swift */,
+				0D56178622D6168900EABB00 /* PriceTableViewCell.swift */,
+				0D56178722D6168900EABB00 /* PriceTableViewCell.xib */,
 				0DD6DA87228C0CE300D6E755 /* TableViewSectionset.swift */,
 				0D1752EA22926A1E006A4431 /* WeatherTableViewCell.swift */,
 				0D1752EB22926A1E006A4431 /* WeatherTableViewCell.xib */,
@@ -303,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D56178922D6168900EABB00 /* PriceTableViewCell.xib in Resources */,
 				0DB7BA752294515A00EA24C8 /* HeaderSection.xib in Resources */,
 				0DD6DA582289690000D6E755 /* LaunchScreen.storyboard in Resources */,
 				0D1752E922925815006A4431 /* BasicTableViewCell.xib in Resources */,
@@ -427,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D1752EC22926A1E006A4431 /* WeatherTableViewCell.swift in Sources */,
+				0D56178822D6168900EABB00 /* PriceTableViewCell.swift in Sources */,
 				0DD6DA88228C0CE400D6E755 /* TableViewSectionset.swift in Sources */,
 				0D1752E822925815006A4431 /* BasicTableViewCell.swift in Sources */,
 				0DD6DA50228968FF00D6E755 /* ViewController.swift in Sources */,

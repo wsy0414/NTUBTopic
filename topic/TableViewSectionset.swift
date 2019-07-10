@@ -95,6 +95,13 @@ class TableViewSectionset: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 55
     }
+    // 切換畫面傳值 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destViewController: ViewController = segue.destination as! ViewController
+        destViewController.tableViewSection = sectionRow
+        destViewController.tableViewSection_under = sectionInsertRow
+    }
+   
     
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
