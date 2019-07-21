@@ -1,19 +1,15 @@
 //
-//  GasPriceCell.swift
+//  AirQualityTableViewCell.swift
 //  topic
 //
-//  Created by 許維倫 on 2019/5/20.
+//  Created by 許維倫 on 2019/7/20.
 //  Copyright © 2019 許維倫. All rights reserved.
 //
 
 import UIKit
 
-// 自製標準Cell 
-class BasicTableViewCell: UITableViewCell {
+class AirQualityTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var valueLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

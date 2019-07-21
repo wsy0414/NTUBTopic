@@ -8,6 +8,7 @@
 
 import UIKit
 
+// 自製油價Cell
 class PriceTableViewCell: UITableViewCell {
 
     @IBOutlet weak var unleadpriceLabel: UILabel!

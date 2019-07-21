@@ -10,16 +10,15 @@ import UIKit
 import CoreLocation
 import Foundation
 
-var priceArray: [String] = ["value", "value", "value", "value"] // 油價初始值
-
-
 class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate{
+    var priceArray: [String] = ["value", "value", "value", "value"] // 油價初始值
     
     var refreshControl: UIRefreshControl! // 宣告元件
     let locationManager: CLLocationManager = CLLocationManager() // 設定定位管理器
     
     @IBOutlet weak var mainTableView: UITableView! // 主畫面的TableView
     @IBOutlet weak var gpsLabel: UILabel! // 地理資訊
+    
     // button切換Section設定畫面
     @IBAction func toSectionset(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goSectionset", sender: self)
@@ -27,16 +26,20 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         // Do any additional setup after loading the view.
+        
+    
         // 初始化更新元件
         refreshControl = UIRefreshControl()
         mainTableView.addSubview(refreshControl)  // 加到tableview裡
+        
         // 註冊自定義tableViewCell
         mainTableView.register(UINib(nibName: "BasicTableViewCell", bundle: nil), forCellReuseIdentifier: "BasicCell")
         mainTableView.register(UINib(nibName: "WeatherTableViewCell", bundle: nil), forCellReuseIdentifier: "WeatherCell")
         mainTableView.register(UINib(nibName: "HeaderSection", bundle: nil), forCellReuseIdentifier: "HeaderCell")
         mainTableView.register(UINib(nibName: "PriceTableViewCell", bundle: nil), forCellReuseIdentifier: "PriceCell")
+        mainTableView.register(UINib(nibName: "TemperatureTableViewCell", bundle: nil), forCellReuseIdentifier: "TemperatureCell")
+        mainTableView.register(UINib(nibName: "AirQualityTableViewCell", bundle: nil), forCellReuseIdentifier: "AirQualityCell")
         
         // 定位
         locationManager.delegate = self //設定服務代理
@@ -50,7 +53,39 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         }else{
             print("失敗")
         }
-       
+    }
+    
+    // 處理最近的位置更新
+    func locationManager(_ manger: CLLocationManager, didUpdateLocations location:[CLLocation]){
+        locationManager.delegate = self
+        
+        let curLocation: CLLocation = location.last! // 取得最新的經緯度
+        // print("經度緯度：\(curLocation.coordinate.longitude)緯度\(curLocation.coordinate.latitude)")
+        
+        // 經緯度轉換成地址
+        let geoCoder = CLGeocoder() //
+        geoCoder.reverseGeocodeLocation(curLocation, preferredLocale: nil , completionHandler: {(placemarks, error) -> Void in
+            // 失敗 回傳空值
+            if error != nil {
+                return
+            }
+            /*  name            街道地址
+             *  country         國家
+             *  province        省籍
+             *  locality        萬華區
+             *  route           街道、路名
+             *  streetNumber    門牌號碼
+             *  postalCode      郵遞區號
+             *   subAdministrativeArea 台北市
+             */
+            // 回傳地理資訊
+            if placemarks != nil && (placemarks?.count)! > 0{
+                let placemark = (placemarks?[0])! as CLPlacemark
+                //這邊拼湊轉回來的地址
+                self.gpsLabel.text = placemark.locality
+                print(placemark.administrativeArea as Any)
+            }
+        })
     }
     
     // 得到油價資訊
@@ -73,11 +108,11 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
                     let json = try
                         JSONSerialization.jsonObject(with: data)
                     if let toDic = json as? [String: String]{
-                        priceArray = [toDic["92"]!, toDic["95"]!, toDic["98"]!, toDic["超級柴油"]!]
+                        self.priceArray = [toDic["92"]!, toDic["95"]!, toDic["98"]!, toDic["超級柴油"]!]
                         DispatchQueue.main.async {
                             self.mainTableView.reloadData()
                         }
-                        print(priceArray)
+                        print(self.priceArray)
                     }
                 }catch{
                     print("\(error)")
@@ -90,7 +125,34 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         }
     }
     
-    // 刷新
+    // 警報資訊
+    func getAlert(){
+        let session = URLSession(configuration: .default)
+        // 设置URL
+        let url = "http://127.0.0.1:8000/alerts/"
+        var request = URLRequest(url: URL(string: url)!)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        // 设置要post的内容，字典格式
+        let postData = ["city": "基隆市"]
+        let postString = postData.compactMap({ (key, value) -> String in
+            return "\(key)=\(value)"
+        }).joined(separator: "&")
+        request.httpBody = postString.data(using: .utf8)
+        // 后面不解释了，和GET的注释一样
+        let task = session.dataTask(with: request) {(data, response, error) in
+            do {
+                let r = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
+                print(r)
+            } catch {
+                print("AlertError")
+                return
+            }
+        }
+        task.resume()
+    }
+    
+    // 刷新頁面
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if refreshControl.isRefreshing{
             getOilprice()
@@ -99,42 +161,34 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     }
     
     // TableView
-    var tableViewSection = ["天氣", "節慶", "油價", "垃圾車", "疾病"]
+    var tableViewSection = ["現在天氣", "空氣品質", "天氣", "節慶", "油價", "警報通知", "疾病"]
     var tableViewSection_under = [] as [String]
     var weatherRow = [" "]
     var hoildayRow = ["即將到來"]
-    var trashRow = ["時間"]
     var diseaseRow = ["登革熱"]
     var holiday = "端午節"
-    
-    var trashTime = "18:00"
     var disese = "中等"
+    
     // 1.要有幾個section
     func numberOfSections(in tableView: UITableView) -> Int {
         return tableViewSection.count
     }
+    
     // 2.每個section有幾個Row
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch tableViewSection[section]{
-        case "天氣":
-            return 1
-        case "節慶":
-            return 1
-        case "油價":
-            return 1
-        case "垃圾車":
-            return 1
-        case "疾病":
-            return 1
-        default:
-            return 0
-        }
-        
+        return 1
     }
+    
     // 3.Row的內容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         switch tableViewSection[indexPath.section] {
+        case "現在天氣":
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TemperatureCell", for: indexPath)as! TemperatureTableViewCell
+            return cell
+        case "空氣品質":
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AirQualityCell", for: indexPath)as! AirQualityTableViewCell
+            return cell
         case "天氣":
             let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath)as! WeatherTableViewCell
             cell.aqivalueLabel.text? = "100"
@@ -149,17 +203,13 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
             return cell
         case "油價":
             let cell = tableView.dequeueReusableCell(withIdentifier: "PriceCell", for: indexPath)as! PriceTableViewCell
-            cell.unleadpriceLabel.text? = priceArray[0]
-            cell.superpriceLabel.text? = priceArray[1]
-            cell.supremepriceLabel.text? = priceArray[2]
-            cell.diesepriceLabel.text? = priceArray[3]
+            cell.unleadpriceLabel.text? = priceArray[0] + "元/公升"
+            cell.superpriceLabel.text? = priceArray[1] + "元/公升"
+            cell.supremepriceLabel.text? = priceArray[2] + "元/公升"
+            cell.diesepriceLabel.text? = priceArray[3] + "元/公升"
             return cell
-            
-        case "垃圾車":
+        case "警報通知":
             let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath)as! BasicTableViewCell
-            cell.titleLabel.text? = trashRow[indexPath.row]
-            cell.valueLabel.text? = trashTime
-            
             return cell
         case "疾病":
             let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath)as! BasicTableViewCell
@@ -173,63 +223,34 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
             return cell
         }
     }
+    
     // Row的高
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if tableViewSection[indexPath.section] == "天氣"{
-            return 158  // 天氣的Row
-        }else if tableViewSection[indexPath.section] == "油價"{
+        switch tableViewSection[indexPath.section] {
+        case "現在天氣":
+            return 100
+        case "空氣品質":
+            return 110
+        case "天氣":
+            return 158
+        case "油價":
             return 250
-        }else{
-            return 50 // 其他的Row
+        default:
+            return 50
         }
+        
     }
+    
     // 設定header的View
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let title = tableView.dequeueReusableCell(withIdentifier: "HeaderCell")as! HeaderSection
         title.headerLabel.text? = tableViewSection[section]
         return title
     }
+    
     // header的高
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if tableViewSection[section] == "天氣"{
-            return 0
-        }else{
-            return 55
-        }
-    }
-    
-    // 處理最近的位置更新
-    func locationManager(_ manger: CLLocationManager, didUpdateLocations location:[CLLocation]){
-        locationManager.delegate = self
-        
-        let curLocation: CLLocation = location.last! // 取得最新的經緯度
-        print("經度緯度：\(curLocation.coordinate.longitude)緯度\(curLocation.coordinate.latitude)")
-        
-        // 經緯度轉換成地址
-        let geoCoder = CLGeocoder() //
-        geoCoder.reverseGeocodeLocation(curLocation, preferredLocale: nil , completionHandler: {(placemarks, error) -> Void in
-                // 失敗 回傳空值
-                if error != nil { 
-                    return
-                }
-                /*  name            街道地址
-                 *  country         國家
-                 *  province        省籍
-                 *  locality        萬華區
-                 *  route           街道、路名
-                 *  streetNumber    門牌號碼
-                 *  postalCode      郵遞區號
-                 *   subAdministrativeArea 台北市
-                 */
-                // 回傳地理資訊
-                if placemarks != nil && (placemarks?.count)! > 0{
-                    let placemark = (placemarks?[0])! as CLPlacemark
-                    //這邊拼湊轉回來的地址
-                    self.gpsLabel.text = placemark.locality
-                    
-                    
-                }
-        })
+            return 40
     }
     
     // Segue 頁面傳值
@@ -239,8 +260,22 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         destViewController.sectionInsertRow = tableViewSection_under
     }
     
-    
-   
+    // TableView 取消section懸停效果
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == mainTableView! {
+            let sectionHeaderHeight = CGFloat(45.0)//headerView的高度
+            if (scrollView.contentOffset.y <= sectionHeaderHeight && scrollView.contentOffset.y >= 0) {
+                
+                scrollView.contentInset = UIEdgeInsets(top: -scrollView.contentOffset.y, left: 0, bottom: 0, right: 0);
+                
+            } else if (scrollView.contentOffset.y >= sectionHeaderHeight) {
+                
+                scrollView.contentInset = UIEdgeInsets(top: -sectionHeaderHeight, left: 0, bottom: 0, right: 0);
+            }
+            
+        }
+    }
+
 }
 
 

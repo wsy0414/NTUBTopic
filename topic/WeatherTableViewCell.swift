@@ -8,6 +8,7 @@
 
 import UIKit
 
+// 自製天氣Cell
 class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
