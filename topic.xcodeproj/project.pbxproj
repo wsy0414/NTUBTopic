@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0F0F5E22FD6079005C4B58 /* TemperatureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D0F0F5C22FD6079005C4B58 /* TemperatureTableViewCell.xib */; };
+		0D0F0F5F22FD6079005C4B58 /* TemperatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F0F5D22FD6079005C4B58 /* TemperatureTableViewCell.swift */; };
 		0D1752E822925815006A4431 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1752E622925815006A4431 /* BasicTableViewCell.swift */; };
 		0D1752E922925815006A4431 /* BasicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1752E722925815006A4431 /* BasicTableViewCell.xib */; };
-		0D1752EC22926A1E006A4431 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1752EA22926A1E006A4431 /* WeatherTableViewCell.swift */; };
-		0D1752ED22926A1E006A4431 /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1752EB22926A1E006A4431 /* WeatherTableViewCell.xib */; };
+		0D2BCB6622F9C7D800613472 /* WeatherTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2BCB6522F9C7D800613472 /* WeatherTViewController.swift */; };
 		0D56178822D6168900EABB00 /* PriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D56178622D6168900EABB00 /* PriceTableViewCell.swift */; };
 		0D56178922D6168900EABB00 /* PriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D56178722D6168900EABB00 /* PriceTableViewCell.xib */; };
+		0D6F03B022ED839000475C47 /* AqiDetailTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6F03AF22ED839000475C47 /* AqiDetailTViewController.swift */; };
 		0D85EBA0228F123A0011033D /* FirstView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D85EB9F228F123A0011033D /* FirstView.storyboard */; };
 		0D85EBA2228F13DF0011033D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D85EBA1228F13DF0011033D /* FirstViewController.swift */; };
 		0DB7BA742294515A00EA24C8 /* HeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7BA722294515A00EA24C8 /* HeaderSection.swift */; };
@@ -26,8 +28,6 @@
 		0DD6DA632289690000D6E755 /* topicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6DA622289690000D6E755 /* topicTests.swift */; };
 		0DD6DA6E2289690000D6E755 /* topicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6DA6D2289690000D6E755 /* topicUITests.swift */; };
 		0DD6DA88228C0CE400D6E755 /* TableViewSectionset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6DA87228C0CE300D6E755 /* TableViewSectionset.swift */; };
-		0DE14AB722DE2D9B00E82FEE /* TemperatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE14AB522DE2D9B00E82FEE /* TemperatureTableViewCell.swift */; };
-		0DE14AB822DE2D9B00E82FEE /* TemperatureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DE14AB622DE2D9B00E82FEE /* TemperatureTableViewCell.xib */; };
 		0DFE4BBE22E3065900215521 /* AirQualityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFE4BBC22E3065900215521 /* AirQualityTableViewCell.swift */; };
 		0DFE4BBF22E3065900215521 /* AirQualityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DFE4BBD22E3065900215521 /* AirQualityTableViewCell.xib */; };
 		6CA743267DD43DFBB1704C41 /* Pods_topicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5495A0C12EE28229555DDFD /* Pods_topicUITests.framework */; };
@@ -53,12 +53,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D0F0F5C22FD6079005C4B58 /* TemperatureTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TemperatureTableViewCell.xib; sourceTree = "<group>"; };
+		0D0F0F5D22FD6079005C4B58 /* TemperatureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureTableViewCell.swift; sourceTree = "<group>"; };
 		0D1752E622925815006A4431 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
 		0D1752E722925815006A4431 /* BasicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicTableViewCell.xib; sourceTree = "<group>"; };
-		0D1752EA22926A1E006A4431 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
-		0D1752EB22926A1E006A4431 /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
+		0D2BCB6522F9C7D800613472 /* WeatherTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTViewController.swift; sourceTree = "<group>"; };
 		0D56178622D6168900EABB00 /* PriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTableViewCell.swift; sourceTree = "<group>"; };
 		0D56178722D6168900EABB00 /* PriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceTableViewCell.xib; sourceTree = "<group>"; };
+		0D6F03AF22ED839000475C47 /* AqiDetailTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiDetailTViewController.swift; sourceTree = "<group>"; };
 		0D85EB9F228F123A0011033D /* FirstView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstView.storyboard; sourceTree = "<group>"; };
 		0D85EBA1228F13DF0011033D /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		0DB7BA722294515A00EA24C8 /* HeaderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSection.swift; sourceTree = "<group>"; };
@@ -78,8 +80,6 @@
 		0DD6DA6D2289690000D6E755 /* topicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topicUITests.swift; sourceTree = "<group>"; };
 		0DD6DA6F2289690000D6E755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DD6DA87228C0CE300D6E755 /* TableViewSectionset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionset.swift; sourceTree = "<group>"; };
-		0DE14AB522DE2D9B00E82FEE /* TemperatureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureTableViewCell.swift; sourceTree = "<group>"; };
-		0DE14AB622DE2D9B00E82FEE /* TemperatureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TemperatureTableViewCell.xib; sourceTree = "<group>"; };
 		0DFE4BBC22E3065900215521 /* AirQualityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityTableViewCell.swift; sourceTree = "<group>"; };
 		0DFE4BBD22E3065900215521 /* AirQualityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AirQualityTableViewCell.xib; sourceTree = "<group>"; };
 		25D69A40B99B37398802B0C9 /* Pods_topic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_topic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,17 +156,17 @@
 		0DD6DA4C228968FF00D6E755 /* topic */ = {
 			isa = PBXGroup;
 			children = (
-				0DD6DA4D228968FF00D6E755 /* AppDelegate.swift */,
-				0DD6DA4F228968FF00D6E755 /* ViewController.swift */,
-				0DE14AB522DE2D9B00E82FEE /* TemperatureTableViewCell.swift */,
-				0DE14AB622DE2D9B00E82FEE /* TemperatureTableViewCell.xib */,
+				0D0F0F5D22FD6079005C4B58 /* TemperatureTableViewCell.swift */,
+				0D0F0F5C22FD6079005C4B58 /* TemperatureTableViewCell.xib */,
 				0DFE4BBC22E3065900215521 /* AirQualityTableViewCell.swift */,
 				0DFE4BBD22E3065900215521 /* AirQualityTableViewCell.xib */,
 				0D56178622D6168900EABB00 /* PriceTableViewCell.swift */,
 				0D56178722D6168900EABB00 /* PriceTableViewCell.xib */,
+				0DD6DA4D228968FF00D6E755 /* AppDelegate.swift */,
+				0DD6DA4F228968FF00D6E755 /* ViewController.swift */,
+				0D6F03AF22ED839000475C47 /* AqiDetailTViewController.swift */,
+				0D2BCB6522F9C7D800613472 /* WeatherTViewController.swift */,
 				0DD6DA87228C0CE300D6E755 /* TableViewSectionset.swift */,
-				0D1752EA22926A1E006A4431 /* WeatherTableViewCell.swift */,
-				0D1752EB22926A1E006A4431 /* WeatherTableViewCell.xib */,
 				0D1752E622925815006A4431 /* BasicTableViewCell.swift */,
 				0D1752E722925815006A4431 /* BasicTableViewCell.xib */,
 				0DB7BA722294515A00EA24C8 /* HeaderSection.swift */,
@@ -329,9 +329,8 @@
 				0DCD295E228F2DD600820543 /* firstview.json in Resources */,
 				0D85EBA0228F123A0011033D /* FirstView.storyboard in Resources */,
 				0DD6DA53228968FF00D6E755 /* Main.storyboard in Resources */,
-				0DE14AB822DE2D9B00E82FEE /* TemperatureTableViewCell.xib in Resources */,
+				0D0F0F5E22FD6079005C4B58 /* TemperatureTableViewCell.xib in Resources */,
 				0DFE4BBF22E3065900215521 /* AirQualityTableViewCell.xib in Resources */,
-				0D1752ED22926A1E006A4431 /* WeatherTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,15 +446,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D1752EC22926A1E006A4431 /* WeatherTableViewCell.swift in Sources */,
 				0D56178822D6168900EABB00 /* PriceTableViewCell.swift in Sources */,
 				0DD6DA88228C0CE400D6E755 /* TableViewSectionset.swift in Sources */,
 				0D1752E822925815006A4431 /* BasicTableViewCell.swift in Sources */,
 				0DFE4BBE22E3065900215521 /* AirQualityTableViewCell.swift in Sources */,
-				0DE14AB722DE2D9B00E82FEE /* TemperatureTableViewCell.swift in Sources */,
+				0D6F03B022ED839000475C47 /* AqiDetailTViewController.swift in Sources */,
 				0DD6DA50228968FF00D6E755 /* ViewController.swift in Sources */,
 				0DB7BA742294515A00EA24C8 /* HeaderSection.swift in Sources */,
 				0D85EBA2228F13DF0011033D /* FirstViewController.swift in Sources */,
+				0D2BCB6622F9C7D800613472 /* WeatherTViewController.swift in Sources */,
+				0D0F0F5F22FD6079005C4B58 /* TemperatureTableViewCell.swift in Sources */,
 				0DD6DA4E228968FF00D6E755 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

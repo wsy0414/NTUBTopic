@@ -12,6 +12,7 @@ class HeaderSection: UITableViewCell {
 
     @IBOutlet weak var headerLabel: UILabel!
     
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

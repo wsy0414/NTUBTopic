@@ -9,7 +9,13 @@
 import UIKit
 
 class AirQualityTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var aqiImage: UIImageView!
+    @IBOutlet weak var pmtwoImage: UIImageView!
+    @IBOutlet weak var pmtwoLabel: UILabel!
+    @IBOutlet weak var pmtwoStatueLb: UILabel!
+    @IBOutlet weak var aqiStatusLb: UILabel!
+    @IBOutlet weak var aqivalueLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

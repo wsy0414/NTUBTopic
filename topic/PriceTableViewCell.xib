@@ -74,19 +74,19 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="油槍" translatesAutoresizingMaskIntoConstraints="NO" id="Bo2-Ve-0KI">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="92油槍" translatesAutoresizingMaskIntoConstraints="NO" id="Bo2-Ve-0KI">
                         <rect key="frame" x="-23" y="16" width="144" height="76"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="油槍" translatesAutoresizingMaskIntoConstraints="NO" id="HNA-CP-UFE">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="95油槍" translatesAutoresizingMaskIntoConstraints="NO" id="HNA-CP-UFE">
                         <rect key="frame" x="198" y="16" width="144" height="76"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="油槍" translatesAutoresizingMaskIntoConstraints="NO" id="d3k-tE-eBm">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="柴油油槍" translatesAutoresizingMaskIntoConstraints="NO" id="d3k-tE-eBm">
                         <rect key="frame" x="198" y="112" width="144" height="76"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="油槍" translatesAutoresizingMaskIntoConstraints="NO" id="Ds4-vZ-ryX">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="98油槍" translatesAutoresizingMaskIntoConstraints="NO" id="Ds4-vZ-ryX">
                         <rect key="frame" x="-24" y="112" width="144" height="76"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
@@ -103,6 +103,9 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="油槍" width="450" height="455"/>
+        <image name="92油槍" width="456" height="470"/>
+        <image name="95油槍" width="454" height="459"/>
+        <image name="98油槍" width="468" height="455"/>
+        <image name="柴油油槍" width="521" height="480"/>
     </resources>
 </document>

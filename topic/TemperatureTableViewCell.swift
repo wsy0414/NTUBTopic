@@ -9,11 +9,12 @@
 import UIKit
 
 class TemperatureTableViewCell: UITableViewCell {
-    @IBOutlet weak var temperatureTitle: UILabel!
-    @IBOutlet weak var bodyTemTitle: UILabel!
-    @IBOutlet weak var temperatureValue: UILabel!
-    @IBOutlet weak var bodytemValue: UILabel!
     
+    @IBOutlet weak var temperatureValue: UILabel!
+    @IBOutlet weak var uviValue: UILabel!
+    @IBOutlet weak var uviStatusLabel: UILabel!
+    @IBOutlet weak var uviImage: UIImageView!
+    @IBOutlet weak var temImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
