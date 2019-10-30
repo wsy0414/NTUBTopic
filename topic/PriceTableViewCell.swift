@@ -11,6 +11,7 @@ import UIKit
 // 自製油價Cell
 class PriceTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var oilView: UIView!
     @IBOutlet weak var unleadpriceLabel: UILabel!
     @IBOutlet weak var superpriceLabel: UILabel!
     @IBOutlet weak var supremepriceLabel: UILabel!

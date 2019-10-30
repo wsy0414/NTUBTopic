@@ -22,6 +22,8 @@
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>取得相機權限</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>取得地理資訊</string>
 	<key>NSLocationAlwaysUsageDescription</key>

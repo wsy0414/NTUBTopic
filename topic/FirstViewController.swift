@@ -14,8 +14,12 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
+        setAnimation()
+        
+    }
+    
+    func setAnimation(){
         let animationview = AnimationView(name: "firstview")
         animationview.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
         animationview.center = self.view.center
@@ -27,8 +31,9 @@ class FirstViewController: UIViewController {
         animationview.play(completion: { (finished) in
             // Do Something
         })
-        
     }
+    
+    
     
 
     /*

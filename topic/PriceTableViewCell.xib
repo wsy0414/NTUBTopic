@@ -18,83 +18,176 @@
                 <rect key="frame" x="0.0" y="0.0" width="422" height="215.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGG-U4-z7f">
-                        <rect key="frame" x="285" y="174" width="125" height="24"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuL-bD-Jh0">
-                        <rect key="frame" x="56" y="174" width="123" height="24"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWg-qS-5za">
-                        <rect key="frame" x="56" y="70" width="123" height="29"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcp-ie-Isf">
-                        <rect key="frame" x="285" y="72" width="125" height="24"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="超級柴油" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0h8-7H-aa6">
-                        <rect key="frame" x="285" y="143" width="50" height="15"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="98無鉛汽油" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXg-ah-Q3g">
-                        <rect key="frame" x="56" y="143" width="65" height="15"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="95無鉛汽油" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KP1-bn-wIv">
-                        <rect key="frame" x="285" y="45" width="65" height="15"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="92無鉛汽油" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKr-ro-aoW">
-                        <rect key="frame" x="56" y="40" width="64" height="24"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="92油槍" translatesAutoresizingMaskIntoConstraints="NO" id="Bo2-Ve-0KI">
-                        <rect key="frame" x="-23" y="16" width="144" height="76"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="95油槍" translatesAutoresizingMaskIntoConstraints="NO" id="HNA-CP-UFE">
-                        <rect key="frame" x="198" y="16" width="144" height="76"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="柴油油槍" translatesAutoresizingMaskIntoConstraints="NO" id="d3k-tE-eBm">
-                        <rect key="frame" x="198" y="112" width="144" height="76"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="98油槍" translatesAutoresizingMaskIntoConstraints="NO" id="Ds4-vZ-ryX">
-                        <rect key="frame" x="-24" y="112" width="144" height="76"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDL-cQ-tcI">
+                        <rect key="frame" x="8" y="8" width="406" height="199.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuL-bD-Jh0">
+                                <rect key="frame" x="74" y="172" width="125" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="5mj-WS-vvs"/>
+                                    <constraint firstAttribute="width" constant="125" id="g8Z-Aw-Hxh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWg-qS-5za">
+                                <rect key="frame" x="74" y="85" width="125" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="27K-AQ-cib"/>
+                                    <constraint firstAttribute="height" constant="24" id="WCq-ba-XWt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcp-ie-Isf">
+                                <rect key="frame" x="273" y="85" width="125" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Fb8-jz-Z60"/>
+                                    <constraint firstAttribute="width" constant="125" id="QNf-ed-IJx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="超級柴油" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0h8-7H-aa6">
+                                <rect key="frame" x="273" y="147" width="75" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="OQz-Y4-hec"/>
+                                    <constraint firstAttribute="width" constant="75" id="RcT-71-zxt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98無鉛汽油" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXg-ah-Q3g">
+                                <rect key="frame" x="74" y="147" width="75" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="4j4-rh-BwX"/>
+                                    <constraint firstAttribute="width" constant="75" id="GTu-MR-iYE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="95無鉛汽油" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KP1-bn-wIv">
+                                <rect key="frame" x="273" y="60" width="75" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="TX6-QL-jW0"/>
+                                    <constraint firstAttribute="height" constant="17" id="Vk0-ol-ubB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="92無鉛汽油" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKr-ro-aoW">
+                                <rect key="frame" x="74" y="60" width="75" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="b5Y-25-WSb"/>
+                                    <constraint firstAttribute="width" constant="75" id="bY8-qC-c96"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="92油槍" translatesAutoresizingMaskIntoConstraints="NO" id="Bo2-Ve-0KI">
+                                <rect key="frame" x="8" y="34" width="71" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="1US-lq-E8m"/>
+                                    <constraint firstAttribute="width" constant="71" id="z5d-Fq-szk"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="95油槍" translatesAutoresizingMaskIntoConstraints="NO" id="HNA-CP-UFE">
+                                <rect key="frame" x="206" y="34" width="71" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="JRM-6O-tfc"/>
+                                    <constraint firstAttribute="height" constant="76" id="yNY-ZB-XNY"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="98油槍" translatesAutoresizingMaskIntoConstraints="NO" id="d3k-tE-eBm">
+                                <rect key="frame" x="8" y="123" width="71" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="EmU-aS-nKT"/>
+                                    <constraint firstAttribute="height" constant="76" id="JEl-d3-C9z"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="柴油油槍" translatesAutoresizingMaskIntoConstraints="NO" id="Ds4-vZ-ryX">
+                                <rect key="frame" x="206" y="123" width="71" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="CNK-WB-Kc6"/>
+                                    <constraint firstAttribute="width" constant="71" id="edE-Ma-CbZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="油價" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNe-xH-63X">
+                                <rect key="frame" x="4" y="4" width="33" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Row" translatesAutoresizingMaskIntoConstraints="NO" id="dV9-NQ-N2C">
+                                <rect key="frame" x="4" y="22" width="402" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="ULp-PJ-Ot4"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGG-U4-z7f">
+                                <rect key="frame" x="273" y="172" width="125" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="XdW-JM-8PS"/>
+                                    <constraint firstAttribute="width" constant="125" id="akA-oa-NSb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iWg-qS-5za" firstAttribute="top" secondItem="bKr-ro-aoW" secondAttribute="bottom" constant="8" id="5HX-2Q-M2Z"/>
+                            <constraint firstItem="ZXg-ah-Q3g" firstAttribute="top" secondItem="iWg-qS-5za" secondAttribute="bottom" constant="38" id="7Xr-LQ-Fas"/>
+                            <constraint firstItem="kGG-U4-z7f" firstAttribute="top" secondItem="0h8-7H-aa6" secondAttribute="bottom" constant="8" id="8cN-EW-Q0k"/>
+                            <constraint firstItem="hNe-xH-63X" firstAttribute="top" secondItem="PDL-cQ-tcI" secondAttribute="top" constant="4" id="AIf-5r-9GI"/>
+                            <constraint firstItem="Ds4-vZ-ryX" firstAttribute="top" secondItem="HNA-CP-UFE" secondAttribute="bottom" constant="13" id="ALZ-vU-Qu0"/>
+                            <constraint firstItem="xuL-bD-Jh0" firstAttribute="leading" secondItem="PDL-cQ-tcI" secondAttribute="leading" constant="74" id="AZc-hQ-PhO"/>
+                            <constraint firstItem="xuL-bD-Jh0" firstAttribute="top" secondItem="ZXg-ah-Q3g" secondAttribute="bottom" constant="8" id="Dun-xm-otC"/>
+                            <constraint firstAttribute="trailing" secondItem="dcp-ie-Isf" secondAttribute="trailing" constant="8" id="J6Q-wC-u7x"/>
+                            <constraint firstAttribute="trailing" secondItem="0h8-7H-aa6" secondAttribute="trailing" constant="58" id="NxQ-tL-rLe"/>
+                            <constraint firstItem="0h8-7H-aa6" firstAttribute="top" secondItem="dcp-ie-Isf" secondAttribute="bottom" constant="38" id="ONi-UA-b9m"/>
+                            <constraint firstItem="bKr-ro-aoW" firstAttribute="leading" secondItem="PDL-cQ-tcI" secondAttribute="leading" constant="74" id="TCk-hO-DUW"/>
+                            <constraint firstItem="ZXg-ah-Q3g" firstAttribute="leading" secondItem="PDL-cQ-tcI" secondAttribute="leading" constant="74" id="TDo-Wf-NoE"/>
+                            <constraint firstItem="Bo2-Ve-0KI" firstAttribute="top" secondItem="dV9-NQ-N2C" secondAttribute="bottom" constant="2" id="TJw-vI-wMi"/>
+                            <constraint firstAttribute="trailing" secondItem="HNA-CP-UFE" secondAttribute="trailing" constant="129" id="W9e-Nx-Gr3"/>
+                            <constraint firstItem="dcp-ie-Isf" firstAttribute="top" secondItem="KP1-bn-wIv" secondAttribute="bottom" constant="8" id="Xe6-0C-mcw"/>
+                            <constraint firstItem="HNA-CP-UFE" firstAttribute="top" secondItem="dV9-NQ-N2C" secondAttribute="bottom" constant="2" id="aXS-X2-4YX"/>
+                            <constraint firstItem="bKr-ro-aoW" firstAttribute="top" secondItem="dV9-NQ-N2C" secondAttribute="bottom" constant="28" id="bHw-NQ-UTm"/>
+                            <constraint firstItem="iWg-qS-5za" firstAttribute="leading" secondItem="PDL-cQ-tcI" secondAttribute="leading" constant="74" id="cfp-aW-kr6"/>
+                            <constraint firstAttribute="trailing" secondItem="dV9-NQ-N2C" secondAttribute="trailing" id="dnL-Rh-qus"/>
+                            <constraint firstAttribute="trailing" secondItem="kGG-U4-z7f" secondAttribute="trailing" constant="8" id="hkV-lJ-goW"/>
+                            <constraint firstItem="hNe-xH-63X" firstAttribute="leading" secondItem="PDL-cQ-tcI" secondAttribute="leading" constant="4" id="hvL-8m-OmX"/>
+                            <constraint firstItem="d3k-tE-eBm" firstAttribute="top" secondItem="Bo2-Ve-0KI" secondAttribute="bottom" constant="13" id="jkp-hJ-AXZ"/>
+                            <constraint firstItem="d3k-tE-eBm" firstAttribute="leading" secondItem="PDL-cQ-tcI" secondAttribute="leading" constant="8" id="nXt-1f-ZMk"/>
+                            <constraint firstAttribute="trailing" secondItem="Ds4-vZ-ryX" secondAttribute="trailing" constant="129" id="np6-0W-8RM"/>
+                            <constraint firstItem="KP1-bn-wIv" firstAttribute="top" secondItem="dV9-NQ-N2C" secondAttribute="bottom" constant="28" id="qnv-Je-gVS"/>
+                            <constraint firstItem="dV9-NQ-N2C" firstAttribute="top" secondItem="PDL-cQ-tcI" secondAttribute="top" constant="22" id="s3K-up-Sje"/>
+                            <constraint firstItem="dV9-NQ-N2C" firstAttribute="leading" secondItem="PDL-cQ-tcI" secondAttribute="leading" constant="4" id="sQE-KJ-jiA"/>
+                            <constraint firstItem="Bo2-Ve-0KI" firstAttribute="leading" secondItem="PDL-cQ-tcI" secondAttribute="leading" constant="8" id="ypv-6e-DuS"/>
+                            <constraint firstAttribute="trailing" secondItem="KP1-bn-wIv" secondAttribute="trailing" constant="58" id="zbS-1D-2PN"/>
+                        </constraints>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="PDL-cQ-tcI" secondAttribute="bottom" constant="8" id="NMo-6y-XIo"/>
+                    <constraint firstItem="PDL-cQ-tcI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="WQi-rp-nmz"/>
+                    <constraint firstItem="PDL-cQ-tcI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="adR-gN-v53"/>
+                    <constraint firstAttribute="trailing" secondItem="PDL-cQ-tcI" secondAttribute="trailing" constant="8" id="rJZ-YE-K0I"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="diesepriceLabel" destination="kGG-U4-z7f" id="Xvn-jY-Ro2"/>
+                <outlet property="oilView" destination="PDL-cQ-tcI" id="f40-X2-wXw"/>
                 <outlet property="superpriceLabel" destination="dcp-ie-Isf" id="b3C-8S-MyN"/>
                 <outlet property="supremepriceLabel" destination="xuL-bD-Jh0" id="tZF-Cf-1KG"/>
                 <outlet property="unleadpriceLabel" destination="iWg-qS-5za" id="4Tp-Jq-mBZ"/>
@@ -106,6 +199,7 @@
         <image name="92油槍" width="456" height="470"/>
         <image name="95油槍" width="454" height="459"/>
         <image name="98油槍" width="468" height="455"/>
+        <image name="Row" width="361" height="2"/>
         <image name="柴油油槍" width="521" height="480"/>
     </resources>
 </document>

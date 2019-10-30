@@ -99,7 +99,7 @@ class TableViewSectionset: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destViewController: ViewController = segue.destination as! ViewController
         destViewController.tableViewSection = sectionRow
-        destViewController.tableViewSection_under = sectionInsertRow
+        destViewController.tableViewSectionUnder = sectionInsertRow
     }
    
     
