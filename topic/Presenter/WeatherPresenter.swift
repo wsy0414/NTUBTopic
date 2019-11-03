@@ -14,7 +14,7 @@ class WeatherPresenter: BasePresenter{
     init(delegate:ViewControllerBaseDelegate){
         self.delegate = delegate
     }
-    func postWeather(Longitude: Float, Latitude: Float){
+    func postWeather(Longitude: Double, Latitude: Double){
         status = "PostWeather"
         let urlsession = UrlSession(url: ServerContentURL.weather ,delegate:self)
         let jsonb = JSONBuilder()

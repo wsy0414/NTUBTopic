@@ -14,7 +14,7 @@ class AqiPresenter: BasePresenter{
     init(delegate:ViewControllerBaseDelegate){
         self.delegate = delegate
     }
-    func postAqi(Longitude: Float, Latitude: Float){
+    func postAqi(Longitude: Double, Latitude: Double){
         status = "PostAqi"
         let urlsession = UrlSession(url: ServerContentURL.aqi ,delegate:self)
         let jsonb = JSONBuilder()

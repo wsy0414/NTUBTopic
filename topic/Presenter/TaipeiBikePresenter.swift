@@ -1,25 +1,24 @@
 //
-//  EnvironmentalWarningPresenter.swift
+//  TaipeiBikePresenter.swift
 //  topic
 //
-//  Created by 許維倫 on 2019/10/14.
+//  Created by 許維倫 on 2019/10/30.
 //  Copyright © 2019 許維倫. All rights reserved.
 //
 
 import Foundation
-class EnvironmentalWarningPresenter: BasePresenter{
+class TaipeiBikePresenter: BasePresenter{
     var process = 0
     var status = ""
     var delegate : ViewControllerBaseDelegate?
     init(delegate:ViewControllerBaseDelegate){
         self.delegate = delegate
     }
-    func postEnvir(Longitude: Double, Latitude: Double){
-        status = "PostEnvir"
-        let urlsession = UrlSession(url: ServerContentURL.environmentalWarning ,delegate:self)
+    func getAllBike(GetBike:String){
+        status = "GetBike"
+        let urlsession = UrlSession(url: ServerContentURL.getAllBike ,delegate:self)
         let jsonb = JSONBuilder()
-        jsonb.addItem(key:"Longitude", value: Longitude)
-        jsonb.addItem(key: "Latitude", value: Latitude)
+        jsonb.addItem(key:"GetBike", value: GetBike)
         urlsession.setupJSON(json:jsonb.value())
         urlsession.postJSON()
     }
@@ -38,4 +37,3 @@ class EnvironmentalWarningPresenter: BasePresenter{
         delegate?.PresenterCallBackError(error: error, type: "")
     }
 }
-

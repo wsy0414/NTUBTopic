@@ -14,8 +14,8 @@ class WeatherCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate,
     var hours: [String] = []
     var preweatherPresenter: PreWeatherPresenter?
     let userDefaults = UserDefaults.standard
-    var userLongitude:Float = 121.528056
-    var userLatitude:Float = 25.031331
+    var userLongitude:Double = 121.528056
+    var userLatitude:Double = 25.031331
     
     func setDate(now: String)->String{
         let nowHour =  (now as NSString).substring(with: NSMakeRange(0,2))

@@ -16,6 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if(!UserDefaults.standard.bool(forKey: "firstOpen")){
+            UserDefaults.standard.set(true, forKey: "abcd")
+            UserDefaults.standard.set(true, forKey: "firstOpen")
+            print("first")
+        }else{
+            UserDefaults.standard.set(false, forKey: "firstOpen")
+            print("unfirst")
+        }
         return true
     }
 

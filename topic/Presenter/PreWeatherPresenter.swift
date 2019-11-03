@@ -15,7 +15,7 @@ class PreWeatherPresenter: BasePresenter{
         self.delegate = delegate
     }
     
-    func postPreWeather(Longitude: Float, Latitude: Float){
+    func postPreWeather(Longitude: Double, Latitude: Double){
         status = "PostPreWeather"
         let urlsession = UrlSession(url: ServerContentURL.preweather ,delegate:self)
         let jsonb = JSONBuilder()

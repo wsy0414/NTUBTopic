@@ -64,6 +64,12 @@ class AqiDetailViewController: UIViewController {
         }else if aqiDetail["AQIStatus"]! == "普通"{
             aqiPicImg.image = UIImage(named: String("Yellow"))
             aqiPicImg.isHidden = false
+        }else if aqiDetail["AQIStatus"]! == "對所有族群不健康"{
+            aqiPicImg.image = UIImage(named: String("Red"))
+            aqiPicImg.isHidden = false
+        }else if aqiDetail["AQIStatus"]! == "對敏感族群不健康"{
+            aqiPicImg.image = UIImage(named: String("Orange"))
+            aqiPicImg.isHidden = false
         }else{
             aqiPicImg.isHidden = true
         }
@@ -73,6 +79,12 @@ class AqiDetailViewController: UIViewController {
             pmTwoPicImg.isHidden = false
         }else if aqiDetail["PM2.5Status"]! == "普通"{
             pmTwoPicImg.image = UIImage(named: String("Yellow"))
+            pmTwoPicImg.isHidden = false
+        }else if aqiDetail["PM2.5Status"]! == "對所有族群不健康"{
+            pmTwoPicImg.image = UIImage(named: String("Red"))
+            pmTwoPicImg.isHidden = false
+        }else if aqiDetail["PM2.5Status"]! == "對敏感族群不健康"{
+            pmTwoPicImg.image = UIImage(named: String("Orange"))
             pmTwoPicImg.isHidden = false
         }else{
             pmTwoPicImg.isHidden = true

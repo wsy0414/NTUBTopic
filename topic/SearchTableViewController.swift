@@ -1,118 +1,94 @@
 //
-//  TableViewSectionset.swift
+//  SearchTableViewController.swift
 //  topic
 //
-//  Created by 許維倫 on 2019/5/15.
+//  Created by 許維倫 on 2019/11/2.
 //  Copyright © 2019 許維倫. All rights reserved.
 //
 
 import UIKit
 
-// 設定畫面
-class TableViewSectionset: UITableViewController {
-    
-    var sectionTitle = ["加入小工具", "更多小工具"]
-    var sectionRow = [] as[String] // 加入小工具
-    var sectionInsertRow = [] as [String] // 更多小工具
-    
+class SearchTableViewController: UITableViewController {
+    let userdefault = UserDefaults.standard
+    var city = ["目前位置"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.isEditing = true // 調成可編輯狀態
+        tableView.isEditing = true
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        city = userdefault.value(forKey: "Cities") as! [String]
+      
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // userdefault.set(city, forKey: "Cities") // 城市
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // city = userdefault.value(forKey: "ChooseCities") as! [String]
     }
 
     // MARK: - Table view data source
-    // 2個Section
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 1
     }
-    // row的行數
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if section == 0{
-            return sectionRow.count
-        }else{
-            return sectionInsertRow.count
-        }
+        return city.count
     }
-    // cell 設定
+    
+    @IBAction func toSearchBar(_ sender: Any) {
+        self.performSegue(withIdentifier: "toSearchBar", sender: self)
+    }
+    
+    @IBAction func toMainView(_ sender: Any) {
+        userdefault.set(city, forKey: "Cities")
+        self.performSegue(withIdentifier: "toMainView", sender: self)
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        if indexPath.section == 0{
-            cell.textLabel?.text = sectionRow[indexPath.row]
-            return cell
-        }else{
-            cell.textLabel?.text = sectionInsertRow[indexPath.row]
-            return cell
-        }
-    }
-    // 編輯 = true
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        
-        return true
-    }
-    // 調換順序 = true
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-       
-        return true
-    }
-    // 調換順序 setting
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        let number = sectionRow[fromIndexPath.row]
-        sectionRow.remove(at: fromIndexPath.row)
-        sectionRow.insert(number, at: to.row)
-    }
-    // Delete and insert
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        if sectionTitle[indexPath.section] == "加入小工具"{
-            return UITableViewCell.EditingStyle.delete
-        }else{
-            return UITableViewCell.EditingStyle.insert
-        }
-        
-    }
-    // 編輯 EditingStyle
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let number = sectionRow[indexPath.row]
-            sectionRow.remove(at: indexPath.row)
-            sectionInsertRow.append(number)
-            tableView.reloadData()
-        }else if editingStyle == .insert{
-            let number = sectionInsertRow[indexPath.row]
-            sectionRow.append(number)
-            sectionInsertRow.remove(at: indexPath.row)
-            tableView.reloadData()
-        }
-    }
-   
-    
-    // sectionHeader
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionTitle[section]
-    }
-    // headerHeigh
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 55
-    }
-    // 切換畫面傳值 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toMainPage"{
-            let destViewController: MainPageViewController = segue.destination as! MainPageViewController
-            destViewController.sectionList = sectionRow
-            destViewController.underSectionList = sectionInsertRow
-        }
-    }
-    
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        cell.textLabel?.text = city[indexPath.row]
         // Configure the cell...
 
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if indexPath.row == 0{
+            return UITableViewCell.EditingStyle.none
+        }else{
+            return UITableViewCell.EditingStyle.delete
+        }
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    
+        if editingStyle == .delete {
+            city.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSearchBar"{
+            let destViewController: SearchBarViewController = segue.destination as! SearchBarViewController
+            destViewController.chooseCities = city
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
