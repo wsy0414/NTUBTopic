@@ -67,7 +67,12 @@ class UrlSession: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
         body.appendString(string: "--\(boundary)--\r\n")
         request.httpBody = body
         
-        let session = URLSession.shared
+        let sessionConfig = URLSessionConfiguration.default  // add timeout
+        sessionConfig.timeoutIntervalForRequest = 30.0
+        sessionConfig.timeoutIntervalForResource = 60.0
+        let session = URLSession(configuration: sessionConfig)
+       // let session = URLSession.shared
+        
         let task = session.dataTask(with: (request as NSURLRequest) as URLRequest){data,response,error in
             print("-----------> [Session] Get Response <----------")
             if error != nil{

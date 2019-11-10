@@ -11,6 +11,7 @@ import UIKit
 class TaipeiBikeTableViewCell: UITableViewCell {
     var cellbuttonDelegate: CellButtonDelegate?
     
+    @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var bikeView: UIView!
     @IBOutlet weak var closeView: UIView!
     

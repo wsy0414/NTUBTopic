@@ -13,16 +13,20 @@ class MainPageViewController: UIPageViewController, UIPageViewControllerDataSour
     let userdefault = UserDefaults.standard
     
     @IBAction func toSetting(_ sender: Any) {
-        self.performSegue(withIdentifier: "toSetting", sender: self)
+        // self.performSegue(withIdentifier: "toSetting", sender: self)
     }
     
     @IBAction func toSearch(_ sender: Any) {
-        self.performSegue(withIdentifier: "toCityView", sender: self)
+        // self.performSegue(withIdentifier: "toCityView", sender: self)
     }
     
-    var sectionList = ["環境", "現在天氣", "油價", "Bike"]
-    var underSectionList = [] as [String]
-    var city = [String]()
+    //var sectionList = ["環境", "現在天氣", "油價", "台北UBike"]
+    // var underSectionList = ["新北UBike"] as [String]
+    var sectionList = [String]()
+    var underSectionList = [String]()
+    var city: [String] = ["台北市中正區"]
+//     var city = [String]()
+    
     var location = CLLocationCoordinate2D(latitude: 120.0 , longitude: 0.0)
     
     // var loction = [["Longitude": 0, "Latitude": 0], ["Longitude": 121.5548065, "Latitude": 25.0287521]]
@@ -48,16 +52,45 @@ class MainPageViewController: UIPageViewController, UIPageViewControllerDataSour
         }else if index == 0{
             if let pageContentViewController = storyboard?.instantiateViewController(withIdentifier: "main") as? ViewController {
                 pageContentViewController.index = index
-                pageContentViewController.tableViewSection = sectionList
+                if userdefault.value(forKey: "sectionList") as? [String] == nil{
+                    userdefault.set(["環境", "現在天氣", "油價", "台北Bike"], forKey: "sectionList")
+                    pageContentViewController.tableViewSection = userdefault.value(forKey: "sectionList") as! [String]
+                }else{
+                    pageContentViewController.tableViewSection = userdefault.value(forKey: "sectionList") as! [String]
+                }
+                
+                if userdefault.value(forKey: "underSectionList") as? [String] == nil{
+                    userdefault.set(["新竹Bike", "新北Bike", "苗栗Bike", "彰化Bike", "屏東Bike", "桃園Bike", "高雄Bike", "台南Bike", "台中Bike", "新北市停車位"], forKey: "underSectionList")
+                    pageContentViewController.tableViewSectionUnder = userdefault.value(forKey: "underSectionList") as! [String]
+                }else{
+                    pageContentViewController.tableViewSectionUnder = userdefault.value(forKey: "underSectionList") as! [String]
+                }
+                
                 return pageContentViewController
             }
         }else{
             if let pageContentViewController = storyboard?.instantiateViewController(withIdentifier: "main") as? ViewController {
                 pageContentViewController.index = index
-                pageContentViewController.tableViewSection = sectionList
-                locationEncode(address: city[index])
-                print(city[index])
-                pageContentViewController.location = location
+//                pageContentViewController.tableViewSection = sectionList
+                if userdefault.value(forKey: "sectionList") as? [String] == nil{
+                    userdefault.set(["環境", "現在天氣", "油價", "台北Bike"], forKey: "sectionList")
+                    pageContentViewController.tableViewSection = userdefault.value(forKey: "sectionList") as! [String]
+                }else{
+                    pageContentViewController.tableViewSection = userdefault.value(forKey: "sectionList") as! [String]
+                    
+                }
+                
+                if userdefault.value(forKey: "underSectionList") as? [String] == nil{
+                    userdefault.set(["新竹Bike", "新北Bike", "苗栗Bike", "彰化Bike", "屏東Bike", "桃園Bike", "高雄Bike", "台南Bike", "台中Bike", "新北市停車位"], forKey: "underSectionList")
+                    pageContentViewController.tableViewSectionUnder = userdefault.value(forKey: "underSectionList") as! [String]
+                }else{
+                    pageContentViewController.tableViewSectionUnder = userdefault.value(forKey: "underSectionList") as! [String]
+                }
+                
+//                pageContentViewController.cityName = city[index]
+//                locationEncode(address: city[index])
+//                print(city[index])
+//                pageContentViewController.location = location
                 return pageContentViewController
             }
         }
@@ -73,7 +106,10 @@ class MainPageViewController: UIPageViewController, UIPageViewControllerDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        city = userdefault.value(forKey: "Cities") as! [String]
+        if let c = userdefault.value(forKey: "Cities") as? [String] {
+            city = c
+        }
+               
         // Set the data source to itself
         dataSource = self
         
@@ -81,7 +117,6 @@ class MainPageViewController: UIPageViewController, UIPageViewControllerDataSour
         if let startingViewController = contentViewController(at: 0) {
             setViewControllers([startingViewController], direction: .forward, animated: true, completion: nil)
         }
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -91,6 +126,7 @@ class MainPageViewController: UIPageViewController, UIPageViewControllerDataSour
     
     
     // Segue 頁面傳值
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSetting"{
             let destViewController: TableViewSectionset = segue.destination as! TableViewSectionset
@@ -99,8 +135,8 @@ class MainPageViewController: UIPageViewController, UIPageViewControllerDataSour
         
         }
     }
-    
-    func locationEncode(address: String){
+    */
+    func locationEncode(address: String) {
         let geocoder = CLGeocoder()
         
         geocoder.geocodeAddressString(address, completionHandler: {

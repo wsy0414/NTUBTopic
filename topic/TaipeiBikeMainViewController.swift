@@ -23,12 +23,16 @@ class TaipeiBikeMainViewController: UIViewController, ViewControllerBaseDelegate
     // let userdefaults = UserDefaults.standard
     
     var taipeiBikePresenter: TaipeiBikePresenter?
+    
     var loadactivity = LoadActivity()
     var refreshControl: UIRefreshControl! // 宣告元件
     var taipeiBike = [NSDictionary]()
     var circle: MKOverlay?
     let locationManager: CLLocationManager = CLLocationManager() // 設定定位管理器
     let userdefault = UserDefaults.standard
+    var bike = String()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,20 +52,55 @@ class TaipeiBikeMainViewController: UIViewController, ViewControllerBaseDelegate
         let appearRegion:MKCoordinateRegion = MKCoordinateRegion(center: userLocation!, span: range)
         mapMainView.setRegion(appearRegion, animated: true)
         mapMainView.showsCompass = true
+        bike = userdefault.value(forKey: "BikeMap") as? String ?? ""
+        
+        switch bike {
+        case "新北":
+            taipeiBikePresenter = TaipeiBikePresenter(delegate: self)
+            taipeiBikePresenter?.getAllBike(GetBike: "1", City: "NewTaipei")
+        case "台北":
+            taipeiBikePresenter = TaipeiBikePresenter(delegate: self)
+            taipeiBikePresenter?.getAllBike(GetBike: "1", City: "Taipei")
+        case "高雄":
+            taipeiBikePresenter = TaipeiBikePresenter(delegate: self)
+            taipeiBikePresenter?.getAllBike(GetBike: "1", City: "Kaohsiungu")
+        case "新竹":
+            taipeiBikePresenter = TaipeiBikePresenter(delegate: self)
+            taipeiBikePresenter?.getAllBike(GetBike: "1", City: "Hsinchu")
+        case "苗栗":
+            taipeiBikePresenter = TaipeiBikePresenter(delegate: self)
+            taipeiBikePresenter?.getAllBike(GetBike: "1", City: "MiaoliCounty")
+        case "彰化":
+            taipeiBikePresenter = TaipeiBikePresenter(delegate: self)
+            taipeiBikePresenter?.getAllBike(GetBike: "1", City: "ChanghuaCounty")
+        case "屏東":
+            taipeiBikePresenter = TaipeiBikePresenter(delegate: self)
+            taipeiBikePresenter?.getAllBike(GetBike: "1", City: "PingtungCounty")
+        case "桃園":
+            taipeiBikePresenter = TaipeiBikePresenter(delegate: self)
+            taipeiBikePresenter?.getAllBike(GetBike: "1", City: "Taoyuan")
+        case "台南":
+            taipeiBikePresenter = TaipeiBikePresenter(delegate: self)
+            taipeiBikePresenter?.getAllBike(GetBike: "1", City: "Tainan")
+        case "台中":
+            taipeiBikePresenter = TaipeiBikePresenter(delegate: self)
+            taipeiBikePresenter?.getAllBike(GetBike: "1", City: "Taichung")
+       
+        default:
+            break
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        taipeiBikePresenter = TaipeiBikePresenter(delegate: self)
-        taipeiBikePresenter?.getAllBike(GetBike: "1")
-        self.loadactivity.showActivityIndicator(self.view)
-        
+        self.loadactivity.showActivityIndicator(self.view)        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    // setPin
     func setData(){
         var lon: Double
         var lat: Double
@@ -165,6 +204,7 @@ class TaipeiBikeMainViewController: UIViewController, ViewControllerBaseDelegate
                         
                         DispatchQueue.main.async {
                             self.taipeiBike = datadic["bikes"] as! [NSDictionary]
+                            print(self.taipeiBike)
                             self.setData()
                         }
                         
@@ -172,6 +212,7 @@ class TaipeiBikeMainViewController: UIViewController, ViewControllerBaseDelegate
                         print("PreWeather error")
                         print(error)
                     }
+                
                 default:
                     break
                 }
@@ -196,7 +237,6 @@ class TaipeiBikeMainViewController: UIViewController, ViewControllerBaseDelegate
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
 

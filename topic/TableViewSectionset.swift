@@ -10,16 +10,24 @@ import UIKit
 
 // 設定畫面
 class TableViewSectionset: UITableViewController {
+    let userdefault = UserDefaults.standard
     
     var sectionTitle = ["加入小工具", "更多小工具"]
-    var sectionRow = [] as[String] // 加入小工具
-    var sectionInsertRow = [] as [String] // 更多小工具
+    var sectionRow = [String]() // 加入小工具
+    var sectionInsertRow = [String]() // 更多小工具
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.isEditing = true // 調成可編輯狀態
+        sectionRow = userdefault.value(forKey: "sectionList") as! [String]
+        sectionInsertRow = userdefault.value(forKey: "underSectionList") as! [String]
     }
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // userdefault.set(sectionRow, forKey: "sectionList")
+        // userdefault.set(sectionInsertRow, forKey: "underSectionList")
+    }
+    
     // MARK: - Table view data source
     // 2個Section
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,14 +61,18 @@ class TableViewSectionset: UITableViewController {
     }
     // 調換順序 = true
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-       
-        return true
+       if sectionTitle[indexPath.section] == "加入小工具"{
+            return true
+       }else{
+            return false
+        }
     }
     // 調換順序 setting
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         let number = sectionRow[fromIndexPath.row]
         sectionRow.remove(at: fromIndexPath.row)
         sectionRow.insert(number, at: to.row)
+        // userdefault.set(sectionRow, forKey: "sectionList")
     }
     // Delete and insert
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -77,11 +89,17 @@ class TableViewSectionset: UITableViewController {
             let number = sectionRow[indexPath.row]
             sectionRow.remove(at: indexPath.row)
             sectionInsertRow.append(number)
+            
+            // userdefault.set(sectionRow, forKey: "sectionList")  // 添加 userdefault
+            // userdefault.set(sectionInsertRow, forKey: "underSectionList")
+            
             tableView.reloadData()
         }else if editingStyle == .insert{
             let number = sectionInsertRow[indexPath.row]
             sectionRow.append(number)
             sectionInsertRow.remove(at: indexPath.row)
+            // userdefault.set(sectionRow, forKey: "sectionList")
+            // userdefault.set(sectionInsertRow, forKey: "underSectionList")
             tableView.reloadData()
         }
     }
@@ -98,9 +116,11 @@ class TableViewSectionset: UITableViewController {
     // 切換畫面傳值 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMainPage"{
-            let destViewController: MainPageViewController = segue.destination as! MainPageViewController
-            destViewController.sectionList = sectionRow
-            destViewController.underSectionList = sectionInsertRow
+            // let destViewController: MainPageViewController = segue.destination as! MainPageViewController
+            // destViewController.sectionList = sectionRow
+            // destViewController.underSectionList = sectionInsertRow
+            userdefault.set(sectionRow, forKey: "sectionList")
+            userdefault.set(sectionInsertRow, forKey: "underSectionList")
         }
     }
     

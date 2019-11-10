@@ -10,6 +10,7 @@ import UIKit
 
 class SearchTableViewController: UITableViewController {
     let userdefault = UserDefaults.standard
+    let pages: Int = 1
     var city = ["目前位置"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,7 @@ class SearchTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        city = userdefault.value(forKey: "Cities") as! [String]
+        city = userdefault.value(forKey: "Cities") as? [String] ?? ["目前位置"]
       
         
     }
@@ -48,10 +49,6 @@ class SearchTableViewController: UITableViewController {
         self.performSegue(withIdentifier: "toSearchBar", sender: self)
     }
     
-    @IBAction func toMainView(_ sender: Any) {
-        userdefault.set(city, forKey: "Cities")
-        self.performSegue(withIdentifier: "toMainView", sender: self)
-    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = city[indexPath.row]
@@ -78,6 +75,7 @@ class SearchTableViewController: UITableViewController {
     
         if editingStyle == .delete {
             city.remove(at: indexPath.row)
+            userdefault.set(city, forKey: "Cities")
             tableView.reloadData()
         }
     }

@@ -14,35 +14,113 @@ class TaipeiCloseBikePresenter: BasePresenter{
     init(delegate:ViewControllerBaseDelegate){
         self.delegate = delegate
     }
-    func getCloseBike(Longitude:Double, Latitude: Double, type: String){
-        switch type {
-        case "1":
-            status = "GetCloseBike"
+    func getCloseBike(Longitude:Double, Latitude: Double, type: String, city: String){
+        switch city {
+        case "Taipei":
+            status = "GetBike"
             let urlsession = UrlSession(url: ServerContentURL.getCloseBike ,delegate:self)
             let jsonb = JSONBuilder()
             jsonb.addItem(key: "Longitude", value: Longitude)
             jsonb.addItem(key:"Latitude", value: Latitude)
             jsonb.addItem(key: "type", value: type)
+            jsonb.addItem(key: "City", value: city)
             urlsession.setupJSON(json:jsonb.value())
             urlsession.postJSON()
-        case "2":
-            status = "GetCloseRentBike"
+        case "NewTaipei":
+            status = "GetNewTaipeiBike"
             let urlsession = UrlSession(url: ServerContentURL.getCloseBike ,delegate:self)
             let jsonb = JSONBuilder()
             jsonb.addItem(key: "Longitude", value: Longitude)
             jsonb.addItem(key:"Latitude", value: Latitude)
             jsonb.addItem(key: "type", value: type)
+            jsonb.addItem(key: "City", value: city)
             urlsession.setupJSON(json:jsonb.value())
             urlsession.postJSON()
-        case "3":
-            status = "GetCloseReturnBike"
+        case "Hsinchu":
+            status = "GetHsinchuBike"
             let urlsession = UrlSession(url: ServerContentURL.getCloseBike ,delegate:self)
             let jsonb = JSONBuilder()
             jsonb.addItem(key: "Longitude", value: Longitude)
             jsonb.addItem(key:"Latitude", value: Latitude)
             jsonb.addItem(key: "type", value: type)
+            jsonb.addItem(key: "City", value: city)
             urlsession.setupJSON(json:jsonb.value())
             urlsession.postJSON()
+            
+        case "MiaoliCounty":
+            status = "GetMiaoliBike"
+            let urlsession = UrlSession(url: ServerContentURL.getCloseBike ,delegate:self)
+            let jsonb = JSONBuilder()
+            jsonb.addItem(key: "Longitude", value: Longitude)
+            jsonb.addItem(key:"Latitude", value: Latitude)
+            jsonb.addItem(key: "type", value: type)
+            jsonb.addItem(key: "City", value: city)
+            urlsession.setupJSON(json:jsonb.value())
+            urlsession.postJSON()
+        case "ChanghuaCounty":
+            status = "GetChanghuaBike"
+            let urlsession = UrlSession(url: ServerContentURL.getCloseBike ,delegate:self)
+            let jsonb = JSONBuilder()
+            jsonb.addItem(key: "Longitude", value: Longitude)
+            jsonb.addItem(key:"Latitude", value: Latitude)
+            jsonb.addItem(key: "type", value: type)
+            jsonb.addItem(key: "City", value: city)
+            urlsession.setupJSON(json:jsonb.value())
+            urlsession.postJSON()
+        case "PingtungCounty":
+            status = "GetPingtungBike"
+            let urlsession = UrlSession(url: ServerContentURL.getCloseBike ,delegate:self)
+            let jsonb = JSONBuilder()
+            jsonb.addItem(key: "Longitude", value: Longitude)
+            jsonb.addItem(key:"Latitude", value: Latitude)
+            jsonb.addItem(key: "type", value: type)
+            jsonb.addItem(key: "City", value: city)
+            urlsession.setupJSON(json:jsonb.value())
+            urlsession.postJSON()
+        case "Taoyuan":
+            status = "GetTaoyuanBike"
+            let urlsession = UrlSession(url: ServerContentURL.getCloseBike ,delegate:self)
+            let jsonb = JSONBuilder()
+            jsonb.addItem(key: "Longitude", value: Longitude)
+            jsonb.addItem(key:"Latitude", value: Latitude)
+            jsonb.addItem(key: "type", value: type)
+            jsonb.addItem(key: "City", value: city)
+            urlsession.setupJSON(json:jsonb.value())
+            urlsession.postJSON()
+        case "Kaohsiung":
+            status = "GetKaohsiungBike"
+            let urlsession = UrlSession(url: ServerContentURL.getCloseBike ,delegate:self)
+            let jsonb = JSONBuilder()
+            jsonb.addItem(key: "Longitude", value: Longitude)
+            jsonb.addItem(key:"Latitude", value: Latitude)
+            jsonb.addItem(key: "type", value: type)
+            jsonb.addItem(key: "City", value: city)
+            urlsession.setupJSON(json:jsonb.value())
+            urlsession.postJSON()
+        case "Tainan":
+            status = "GetTainanBike"
+            let urlsession = UrlSession(url: ServerContentURL.getCloseBike ,delegate:self)
+            let jsonb = JSONBuilder()
+            jsonb.addItem(key: "Longitude", value: Longitude)
+            jsonb.addItem(key:"Latitude", value: Latitude)
+            jsonb.addItem(key: "type", value: type)
+            jsonb.addItem(key: "City", value: city)
+            urlsession.setupJSON(json:jsonb.value())
+            urlsession.postJSON()
+        case "Taichung":
+            status = "GetTaichungBike"
+            let urlsession = UrlSession(url: ServerContentURL.getCloseBike ,delegate:self)
+            let jsonb = JSONBuilder()
+            jsonb.addItem(key: "Longitude", value: Longitude)
+            jsonb.addItem(key:"Latitude", value: Latitude)
+            jsonb.addItem(key: "type", value: type)
+            jsonb.addItem(key: "City", value: city)
+            urlsession.setupJSON(json:jsonb.value())
+            urlsession.postJSON()
+       
+            
+            
+
         default:
             break
         }
@@ -52,7 +130,7 @@ class TaipeiCloseBikePresenter: BasePresenter{
         let urlsession = UrlSession()
         let jsondictionary = urlsession.jsonDictionary(json: data)
         let result = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
-        let temp_result = jsondictionary.object(forKey: "result") as! Bool
+        let temp_result = jsondictionary.object(forKey: "result") as? Bool ?? false
         
         if temp_result{
             delegate?.PresenterCallBack(datadic: jsondictionary, success: true, type: status)

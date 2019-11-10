@@ -10,7 +10,7 @@ import Foundation
 class ServerContentURL {
     
     static var ip = "https://topic-ntub.herokuapp.com/"  // Heroku 主機端
-    // static var ip = "http://127.0.0.1:8000/" // 本機端
+//     static var ip = "http://127.0.0.1:8000/" // 本機端
     
     static var gasprice = ip + "gasprice/"
     static var aqi = ip + "aqi/"
@@ -19,6 +19,6 @@ class ServerContentURL {
     static var preweather = ip + "preweather/"
     static var getAllBike = ip + "getAllBike/"
     static var getCloseBike = ip + "getCloseBike/"
-    
+    static var getParkNTPC = ip + "parkNTPC/"
 }
 
